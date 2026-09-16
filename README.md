@@ -1,5 +1,19 @@
 # Nanshan Tennis Booking Assistant
 
+Double-click `start-app.cmd` to open the booking website.
+
+## Quick start: using the booking website
+
+1. **Start the app.** Install Node.js 20 or later, then double-click `start-app.cmd`. If the browser does not open automatically, visit <http://127.0.0.1:3827/> on the same computer.
+2. **Connect your account.** Select your own fresh HAR file under “Login status and session maintenance” (登录状态与会话维护), then click “Import HAR for the selected identity” (导入当前身份HAR). Alternatively, use the session synchronization helper after completing its initial setup. Detailed instructions for both methods are below.
+3. **Verify your login.** Click “Check login status for the selected identity” (检查当前身份登录状态) and wait for a valid result. Only public bookings (市民订场) are currently supported; student/staff bookings are unavailable.
+4. **Choose your booking.** Select the venue, booking date, start time, and end time. Enable consecutive slots across different courts if you are willing to switch courts during the session. For Dashahe, enable courts 1 and 2 only if you want to include those more expensive courts.
+5. **Check availability or book immediately.** “Check live availability” (检查实时空位) is read-only and does not reserve anything. “Book now” (立即订场) attempts a real booking and can create an unpaid order.
+6. **Schedule a booking instead.** Set “Execution time” (执行时间) to the date and time when you want the attempt to start, then click “Schedule booking” (定时订场). This is separate from the date and time you want to play. Check the venue's official release rules. Enable the daily-repeat checkbox only if you want the app to create another task for the following day.
+7. **Keep the service available.** Leave the computer awake and connected to the internet, with the local service running. Scheduled tasks open a session synchronization window 20 minutes before execution. This does not log you in automatically: if needed, complete login in the official mini program with the synchronization helper and proxy running, then confirm successful synchronization on the website.
+8. **Review the result and pay.** Watch “Tasks and orders” (任务与订单) for progress. After a court is held, open the matching unpaid order in the official mini program's “My orders” (我的订单) and pay before its deadline. A successful hold or payment-parameter request does not mean a payment notification was sent to your phone.
+9. **Manage your records.** Use “Cancel task” (取消任务) to stop a task that has not started. Select completed or cancelled records and click “Delete selected records” (删除选中记录) to remove them from the list. This does not cancel official orders or clear duplicate-booking protection. If an expired or cancelled order blocks a new attempt, use the old-order reconciliation button first.
+
 A local booking tool built with AI assistance from HAR captures of real, manual booking sessions in the official WeChat mini program. This is not an official venue product or a universal booking bot: importing a HAR file does not automatically add support for a new platform.
 
 Each user runs the app on their own Windows computer with their own verified account. The current implementation supports public bookings (市民订场) through Nanshan Culture and Sports (南山文体通), including Shenzhen University Town Sports Center and Dashahe International Tennis Exchange Center. Features include date and time selection, scheduled bookings, daily repeats, consecutive time slots across different courts, and an option to include Dashahe's more expensive courts 1 and 2, which are excluded by default.
