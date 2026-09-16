@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "verified": false,
+  "releaseAt": "22:00",
+  "origins": ["https://replace-with-captured-host.invalid"],
+  "target": { "venueId": "REPLACE", "sportId": "REPLACE", "accountId": "REPLACE" },
+  "loginUrl": null,
+  "paymentUrl": null,
+  "paymentOrderParam": null,
+  "operations": {
+    "session": {
+      "evidence": "REPLACE: 本人HAR中的身份查询请求序号；以下URL和字段均为虚构结构示例",
+      "url": "https://replace-with-captured-host.invalid/session",
+      "method": "GET", "encoding": "none", "readOnly": true,
+      "assertions": [{ "path": "code", "equals": 0 }]
+    },
+    "slots": {
+      "evidence": "REPLACE: 本人HAR中的场次查询请求序号",
+      "url": "https://replace-with-captured-host.invalid/slots",
+      "method": "GET", "encoding": "none", "readOnly": true,
+      "query": { "venueId": "{{venueId}}", "sportId": "{{sportId}}", "date": "{{date}}" },
+      "assertions": [{ "path": "code", "equals": 0 }]
+    },
+    "hold": {
+      "evidence": "REPLACE: 本人HAR中的创建待支付订单请求序号，必须核实不扣款",
+      "url": "https://replace-with-captured-host.invalid/orders/create",
+      "method": "POST", "encoding": "json", "createsUnpaidOrderOnly": false,
+      "body": { "venueId": "{{venueId}}", "sportId": "{{sportId}}", "date": "{{date}}", "courtId": "{{courtId}}", "slotIds": "{{slotIds}}" },
+      "assertions": [{ "path": "code", "equals": 0 }]
+    },
+    "order": {
+      "evidence": "REPLACE: 本人HAR中的订单详情查询请求序号",
+      "url": "https://replace-with-captured-host.invalid/orders/detail",
+      "method": "GET", "encoding": "none", "readOnly": true,
+      "query": { "orderId": "{{orderId}}" },
+      "assertions": [{ "path": "code", "equals": 0 }]
+    }
+  },
+  "maps": {
+    "session": { "accountId": "data.userId", "identity": "data.role", "studentValue": "student" },
+    "slots": {
+      "rows": "data.slots", "id": "id", "courtId": "courtId", "date": "date", "venueId": "venueId", "sportId": "sportId",
+      "start": "start", "end": "end", "available": "available", "availableValue": true
+    },
+    "hold": { "orderId": "data.orderId" },
+    "order": {
+      "orderId": "data.orderId", "accountId": "data.userId", "identity": "data.role", "studentValue": "student",
+      "venueId": "data.venueId", "sportId": "data.sportId", "courtId": "data.courtId", "date": "data.date",
+      "start": "data.start", "end": "data.end", "status": "data.status", "heldValue": "UNPAID",
+      "expiresAt": "data.expiresAt", "expiresFormat": "iso"
+    }
+  }
+}

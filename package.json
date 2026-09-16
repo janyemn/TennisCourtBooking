@@ -1,0 +1,7 @@
+{
+  "name": "tennis-reservation-assistant",
+  "private": true,
+  "type": "module",
+  "scripts": { "start": "node src/main.mjs", "app": "node app/server.mjs --open", "demo": "node src/cli.mjs --demo", "test": "node --test" },
+  "engines": { "node": ">=20" }
+}

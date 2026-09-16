@@ -1,0 +1,13 @@
+node_modules/
+.local/
+*.log
+*.har
+session*.json
+dist/
+__pycache__/
+*.pyc
+*.pem
+*.key
+*.p12
+*.pfx
+*.cer

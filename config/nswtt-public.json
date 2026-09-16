@@ -1,0 +1,24 @@
+{
+  "profile": {
+    "version": 1,
+    "verified": true,
+    "provider": "nswtt",
+    "identity": "市民",
+    "releaseAt": "22:00",
+    "origins": [
+      "https://nswtt.rim20.com"
+    ],
+    "target": {
+      "venueId": "ctb5mhl66n4522ru8ih0",
+      "sportId": "ctb6g3t66n453o8g5a6g"
+    },
+    "extype": 41,
+    "payeeconfigid": "cuuiqjl66n49fv1d2ffg"
+  },
+  "session": {
+    "publicKey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwNlbrRQpIHlTNfjSrBJQoI5t1aRTAbDy61fJPJLFfhacW1jfmLJpONm1wxFmhKcIt8WVyTQKdAD2HdUrBuoz75LDY4Lm3k4+9hZrftAnE6hnuPCj7E34wgP5riZ6DfK9PYeSJDvZ4wXvpw0m2e84MlpaJD85BcCXTfTZctKXz/cQhFcgilMF93Q79OesAdd/qHQIbl4/TuYa40HClKnlzNTIIw+LtrYqn3STGxJhrCuu0UGNznznv4VmFtFtmww5nu16vV0z9tUZIsQyJzeK+Re/C+y7Do962rzuzLb7DqYwLo7VBqO5P3abhr4JliS1eFv314SSj9cvmVsu3KunoQIDAQAB\n-----END PUBLIC KEY-----",
+    "appid": "wx9f30f1cea85e1e8c",
+    "headers": {},
+    "queries": {}
+  }
+}
